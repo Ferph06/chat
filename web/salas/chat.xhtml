@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <h:outputStylesheet  library="materialize" name="css/materialize.css"/>
+    </h:head>
+    <h:body>
+        <div class="container" style="height: 350px;overflow-y: scroll;overflow-x: hidden; width: auto;">
+            <div class="row">
+                <div class="col m12" id="txt" style="margin-left:35%;"></div>
+            </div>
+        </div>
+        <div class="row" style="height: auto;">
+            <div class="input-field col m6 " style="height: auto;">
+                <h:inputText   id="cajamensaje" required="true" label="mensaje"  requiredMessage="El mensaje es requerido"/>
+                <label for="cajamensaje">Mensaje</label>
+            </div>
+            <div class="col s6 offset-m2">
+                <a class="waves-effect waves-light btn" onclick="enviarMensaje();">Enviar</a>
+
+            </div>
+        </div>
+        <h:outputScript library="materialize"  name="js/materialize.js"/>
+
+        <script>
+            const user = '#{usuariosBean.us.usuario}';
+
+        </script>
+        <h:outputScript library="js"  name="ws.js"/>
+
+    </h:body>
+</html>
+
